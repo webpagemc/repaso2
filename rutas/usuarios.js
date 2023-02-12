@@ -4,7 +4,14 @@ const {modeloUsuario} = require("../modelos/usuarios")
 
 router.get("/",async(req,res)=>{
 
-    const datos = await modeloUsuario.find().lean();
+    const datos = await modeloUsuario.find();
+    res.send(datos);
+
+})
+
+router.get("/soloBackend",async(req,res)=>{
+
+    const datos = await modeloUsuario.find({curso:"Backend"});
     res.send(datos);
 
 })

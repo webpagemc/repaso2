@@ -6,7 +6,10 @@ const usuariosSchema = new mongoose.Schema(
         nombre:{type:String},
         apellido:{type:String},
         edad:{type:String},
-        curso:{type:String}
+        curso:{type:String, index:true }
+    },
+    {
+        versionKey:false
     }
 
 )
@@ -14,3 +17,4 @@ const usuariosSchema = new mongoose.Schema(
 const modeloUsuario = mongoose.model("usuarios",usuariosSchema)
 
 module.exports = {modeloUsuario}
+
